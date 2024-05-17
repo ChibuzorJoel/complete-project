@@ -1,0 +1,53 @@
+<div class="ekart-product--container">
+     <!-- <img [src]="product.pImage" alt="">
+    <p>Name: {{ product.name }}</p>
+    <p>Price: {{ '$' + product.price }}</p>
+    <p>Color: {{product.color}}</p>
+    <p>Discounted Price: {{ getDiscountPrice() }}</p>
+    <p>{{product.inStock > 0 ? 'Only' + product.inStock +' items left': 'Not in Stock'}}</p> -->
+    <!-- <button (click)="increament()">+</button>
+    <span>{{addToCart}}</span>
+    <button (click)="decreament()">-</button> 
+  
+    <button [disabled]="!(product.inStock > 0)">Buy Now</button> <br>  -->
+     <!-- <input [value]="name"  (input)="onNameChange($event)"> <br>
+    <p > name = {{name}}</p>    -->
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+    <!--
+     <div class="ekart--search--product">
+        <input class="ekart-search-product-input" [(ngModel)]="searchText">
+        <button class="btn btn-search">Search</button>
+    </div>
+    <div class="ekart-search-result-for"><p *ngIf="searchText != ''" ><strong>Search result for:</strong>{{searchText}}</p></div> -->
+    <!-- <button (click)="increament()">+</button>
+    <span>{{addToCart}}</span>
+    <button (click)="decreament()">-</button> -->
+    <app-product-list [searchText]="searchText" #productListComponent></app-product-list> 
+    <app-product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></app-product-detail>
+  
+      <div class="ekart-featured-products">
+        <div class="ekart-featured-product-heading">
+                 <h1>Latest Arrival in Pupolar Brands</h1>
+        </div>
+        <app-featured-brands>
+          <h3 class="title">New Arrivals in Nike</h3>
+          <button class="call-to-action">Learn More</button>
+        </app-featured-brands>
+        <app-featured-brands>
+          <h3 class="title">New Arrivals in Nike</h3>
+          <button class="call-to-action">Learn More</button>
+        </app-featured-brands>
+        <app-featured-brands>
+          <h3 class="title">New Arrivals in Nike</h3>
+          <button class="call-to-action">Learn More</button>
+        </app-featured-brands>
+      </div>
+
+  <!--Disabled, Hidden, Checked-->
+<!-- <input  (input)="onChange($event)">
+<p>name = {{name}}</p> -->
+<!-- <div *ngFor="let string of listOfString">
+  <p>The class has {{string}} as a student</p>
+    </div> -->
+
+</div>
